@@ -1,0 +1,76 @@
+using System;
+
+class Carro
+{
+    private string marca;
+    private string modelo;
+    private int ano;
+
+    // Construtor sem parâmetros
+    public Carro()
+    {
+        marca = "Sem marca";
+        modelo = "Sem modelo";
+        ano = 0;
+    }
+
+    // Construtor com parâmetros
+    public Carro(string marca, string modelo, int ano)
+    {
+        this.marca = marca;
+        this.modelo = modelo;
+        this.ano = ano;
+    }
+
+    // Propriedades
+    public string Marca
+    {
+        get { return marca; }
+        set { marca = value; }
+    }
+
+    public string Modelo
+    {
+        get { return modelo; }
+        set { modelo = value; }
+    }
+
+    public int Ano
+    {
+        get { return ano; }
+        set { ano = value; }
+    }
+
+    // Método para exibir os dados do carro
+    public void ExibirDados()
+    {
+        Console.WriteLine("Marca: " + marca);
+        Console.WriteLine("Modelo: " + modelo);
+        Console.WriteLine("Ano: " + ano);
+    }
+}
+
+public class Program
+{
+    public static void Main(string[] args)
+    {
+        // Criando um objeto Carro utilizando o construtor sem parâmetros
+        Carro carro1 = new Carro();
+        carro1.ExibirDados();
+
+        Console.WriteLine();
+
+        // Criando um objeto Carro utilizando o construtor com parâmetros
+        Carro carro2 = new Carro("Ford", "Fiesta", 2019);
+        carro2.ExibirDados();
+
+        Console.WriteLine();
+
+        // Utilizando a sobrecarga do construtor para criar um objeto Carro
+        Carro carro3 = new Carro();
+        carro3.Marca = "Chevrolet";
+        carro3.Modelo = "Onix";
+        carro3.Ano = 2020;
+        carro3.ExibirDados();
+    }
+}
